@@ -2,14 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:jdm/constant/sized_box_constant.dart';
+import 'package:jdm/core/base/base_state.dart';
 import 'package:jdm/screen/login/components/background_image.dart';
 import 'package:jdm/screen/login/components/rounded_button.dart';
 import 'package:jdm/screen/login/components/social_card.dart';
 import 'components/neon_text.dart';
 import 'components/text_field.dart';
 
-class LoginScreen extends StatelessWidget {
+part 'components/login_string_values.dart';
+
+class LoginScreen extends StatelessWidget with BaseState {
   static String routeName = "/login_screen";
+  final _LoginStringValues values = _LoginStringValues();
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -22,48 +27,16 @@ class LoginScreen extends StatelessWidget {
               top: false,
               child: Column(
                 children: [
-                  Container(
-                    height: 130,
-                    child: Center(
-                        child: NeonText(text: "JDM CARS",color: Colors.red)),
-                  ),
+                  buildTopText(),
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
                       children: [
-                      Column(children: [ BuildTextField(
-                          hintText: "Enter Email", labelText: "Email",obscure: false,),
-                      SizedBox(height: 30),
-                      BuildTextField(
-                          hintText: "Enter Password", labelText: "Password",obscure: true,),
-                      SizedBox(height: 50),
-                      RoundedButton(buttonText: "Log In"),],),
-                       
-                        SizedBox(
-                          height: 40,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            SocialCard(
-                                icon: "assets/icons/github.png", press: () {}),
-                            SocialCard(
-                                icon: "assets/icons/google.png", press: () {}),
-                            SocialCard(
-                                icon: "assets/icons/discord.png", press: () {})
-                          ],
-                        ),
-                        SizedBox(height: 80.0),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              NeonText(text: "Sign In",color: Colors.green,),
-                              NeonText(text: "Sign Up",color:Colors.green,),
-                            ],
-                          ),
-                        )
+                        buildTextFieldsandButton(),
+                        sizedBoxConstants.height40,
+                        buildSocialCard(),
+                        sizedBoxConstants.height80,
+                        buildNeonSignText()
                       ],
                     ),
                   ),
@@ -76,5 +49,60 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  
+  Container buildNeonSignText() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          NeonText(
+            text: values.signIn,
+            color: Colors.green,
+          ),
+          NeonText(
+            text: values.signUp,
+            color: Colors.green,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Row buildSocialCard() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        SocialCard(icon: "assets/icons/github.png", press: () {}),
+        SocialCard(icon: "assets/icons/google.png", press: () {}),
+        SocialCard(icon: "assets/icons/discord.png", press: () {})
+      ],
+    );
+  }
+
+  Column buildTextFieldsandButton() {
+    return Column(
+      children: [
+        BuildTextField(
+          hintText: "Enter Email",
+          labelText: "Email",
+          obscure: false,
+        ),
+        sizedBoxConstants.height30,
+        BuildTextField(
+          hintText: "Enter Password",
+          labelText: "Password",
+          obscure: true,
+        ),
+        sizedBoxConstants.height50,
+        RoundedButton(buttonText: values.login),
+      ],
+    );
+  }
+
+  Container buildTopText() {
+    return Container(
+      height: 130,
+      child: Center(child: NeonText(text: values.topText, color: Colors.red)),
+    );
+  }
 }
