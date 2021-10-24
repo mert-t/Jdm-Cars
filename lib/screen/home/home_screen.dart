@@ -76,7 +76,7 @@ class HomeScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w600,
                                       ),
                                     ),
-                                    SizedBox(
+                                    SizedBox( 
                                       height: 5.0,
                                     ),
                                     Text(
