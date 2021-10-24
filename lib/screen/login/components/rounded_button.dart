@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jdm/constant/color_constant.dart';
+import 'package:jdm/screen/home/home_screen.dart';
 
 class RoundedButton extends StatelessWidget {
   final String buttonText;
@@ -18,7 +19,7 @@ class RoundedButton extends StatelessWidget {
         border: Border.all(color: ColorConstants.instance.white)
       ),
       child: FlatButton(
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, HomeScreen.routeName),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 16.0),
           child: Text(

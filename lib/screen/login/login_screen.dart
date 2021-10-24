@@ -19,7 +19,7 @@ class LoginScreen extends StatelessWidget with BaseState {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        BackgroundImage(),
+        BackgroundImage(image: AssetImage('assets/images/gtrwp.jpg'),),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
