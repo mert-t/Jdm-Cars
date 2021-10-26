@@ -14,7 +14,7 @@ class NissanCar {
   });
 }
 
-List<NissanCar> cars = [
+List<NissanCar> nissanCars = [
   NissanCar(
       name: "Nissan S13 ",
       dateOfManu: "1993",
