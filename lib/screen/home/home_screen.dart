@@ -13,50 +13,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        BackgroundImage(
-          image: AssetImage('assets/images/carbackk.jpg'),
-        ),
+        BackgroundImage(image: AssetImage('assets/images/carbackk.jpg')),
         Scaffold(
           backgroundColor: Colors.transparent,
           body: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  height: 60.0,
-                ),
+                SizedBox(height: 60.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      NeonText(
-                        text: "Nissan",
-                        color: Colors.purple,
-                        fontSize: 20.0,
-                        font: NeonFont.Membra,
-                      ),
-                      Text("See All",style: TextStyle(color: Colors.white),),
-                    ],
-                  ),
-                ),
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: buildNissanText()),
                 SizedBox(height: 10.0),
                 NissanCarousel(),
                 SizedBox(height: 10.0),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        NeonText(
-                          text: "Toyota",
-                          color: Colors.teal,
-                          fontSize: 20.0,
-                          font: NeonFont.Membra,
-                        ),
-                        Text("See All",style: TextStyle(color: Colors.white),),
-                      ],
-                    ),
-                ),
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: buildToyotaText()),
                 ToyotaCarousel(),
               ],
             ),
@@ -65,5 +37,40 @@ class HomeScreen extends StatelessWidget {
       ],
     );
   }
-}
 
+  Row buildToyotaText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        NeonText(
+          text: "Toyota",
+          color: Colors.teal,
+          fontSize: 20.0,
+          font: NeonFont.Membra,
+        ),
+        Text(
+          "See All",
+          style: TextStyle(color: Colors.white),
+        ),
+      ],
+    );
+  }
+
+  Row buildNissanText() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        NeonText(
+          text: "Nissan",
+          color: Colors.purple,
+          fontSize: 20.0,
+          font: NeonFont.Membra,
+        ),
+        Text(
+          "See All",
+          style: TextStyle(color: Colors.white),
+        ),
+      ],
+    );
+  }
+}

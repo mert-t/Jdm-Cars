@@ -72,9 +72,9 @@ class LoginScreen extends StatelessWidget with BaseState {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SocialCard(icon: "assets/icons/github.png", press: () {}),
-        SocialCard(icon: "assets/icons/google.png", press: () {}),
-        SocialCard(icon: "assets/icons/discord.png", press: () {})
+        SocialCard(icon: "assets/icons/github.png", press: () {},color1:Colors.purple.withOpacity(0.2),color2: Colors.red.withOpacity(0.6),),
+        SocialCard(icon: "assets/icons/google.png", press: () {},color1:Colors.purple.withOpacity(0.2),color2: Colors.red.withOpacity(0.6),),
+        SocialCard(icon: "assets/icons/discord.png", press: () {},color1:Colors.purple.withOpacity(0.2),color2: Colors.red.withOpacity(0.6),)
       ],
     );
   }
