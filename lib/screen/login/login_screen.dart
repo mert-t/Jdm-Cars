@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'package:jdm/constant/sized_box_constant.dart';
 import 'package:jdm/core/base/base_state.dart';
 import 'package:jdm/screen/login/components/background_image.dart';
 import 'package:jdm/screen/login/components/rounded_button.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jdm/constant/sized_box_constant.dart';
 import 'package:jdm/model/toyota_model.dart';
 import 'package:jdm/screen/login/components/neon_text.dart';
 import 'package:neon/neon.dart';
@@ -36,28 +37,54 @@ class ToyotaCarousel extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(height: 10.0),
-                          Text(
-                            "Year : ${toyotaCar.dateOfManu}",
-                            style: TextStyle(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          SizedBox(
-                            height: 5.0,
-                          ),
-                          Text(
-                            "Popularity: ${toyotaCar.popularity}",
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ],
-                      ),
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBoxConstants.instance.height10,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Row(
+              children: [
+                NeonText(
+                  text: "Year:",
+                  color: Colors.blueGrey,
+                  fontSize: 10.0,
+                  font: NeonFont.Membra,
+                ),
+                SizedBoxConstants.instance.width10,
+                Text(
+                  toyotaCar.dateOfManu,
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBoxConstants.instance.height5,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Row(
+              children: [
+                NeonText(
+                  text: "Popularity:",
+                  color: Colors.blueGrey,
+                  fontSize: 10.0,
+                  font: NeonFont.Membra,
+                ),
+                SizedBoxConstants.instance.width10,
+                Text(
+                  toyotaCar.popularity,
+                  style: TextStyle(
+                    fontSize: 11.0,
+                    
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
                     ),
                   ),
                 ),
