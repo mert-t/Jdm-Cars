@@ -10,11 +10,11 @@ Login Screen:
 
 Home Screen:
 
-![image](https://user-images.githubusercontent.com/83662229/139741965-262e65fd-04f1-451a-95c4-ce4363711de4.png)
+![image](https://user-images.githubusercontent.com/83662229/139742067-f3cd5b75-b4cd-493e-b012-00c329cee568.png)
 
 Car Screen:
 
-![image](https://user-images.githubusercontent.com/83662229/139741935-79156ba5-a190-408a-b397-9f624d796f2d.png)
+![image](https://user-images.githubusercontent.com/83662229/139742029-2c78d65a-1025-4d65-a798-976d384e312c.png)
 
 
 
